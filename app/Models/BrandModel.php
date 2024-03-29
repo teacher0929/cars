@@ -17,7 +17,7 @@ class BrandModel extends Model
 
     public function brand(): BelongsTo
     {
-        return $this->belongsTo(BrandModel::class);
+        return $this->belongsTo(Brand::class);
     }
 
 
