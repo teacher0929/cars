@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Brand extends Model
+class BrandModel extends Model
 {
     protected $guarded = [
         'id',
@@ -14,9 +15,9 @@ class Brand extends Model
     public $timestamps = false;
 
 
-    public function brandModels(): HasMany
+    public function brand(): BelongsTo
     {
-        return $this->hasMany(BrandModel::class);
+        return $this->belongsTo(BrandModel::class);
     }
 
 
