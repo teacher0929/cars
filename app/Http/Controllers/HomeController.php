@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
+use App\Models\Brand;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return Car::get();
+        $brands = Brand::with(['brandModels' => function ($query) {
+            $query->withCount('cars');
+        }])
+            ->withCount('cars')
+            ->orderBy('name')
+            ->get();
+
+        return view('index')
+            ->with([
+                'brands' => $brands,
+            ]);
     }
 }
