@@ -8,12 +8,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $brands = Brand::with(['brandModels'])
+        $brands = Brand::with('brandModels')
             ->withCount('cars')
             ->orderBy('name')
             ->get();
 
-        return view('index')
+        return view('home.index')
             ->with([
                 'brands' => $brands,
             ]);

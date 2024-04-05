@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class BrandModel extends Model
 {
@@ -15,13 +13,13 @@ class BrandModel extends Model
     public $timestamps = false;
 
 
-    public function brand(): BelongsTo
+    public function brand()
     {
         return $this->belongsTo(Brand::class);
     }
 
 
-    public function cars(): HasMany
+    public function cars()
     {
         return $this->hasMany(Car::class);
     }

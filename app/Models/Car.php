@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Car extends Model
 {
@@ -23,37 +22,37 @@ class Car extends Model
     }
 
 
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
 
-    public function location(): BelongsTo
+    public function location()
     {
         return $this->belongsTo(Location::class);
     }
 
 
-    public function brand(): BelongsTo
+    public function brand()
     {
         return $this->belongsTo(Brand::class);
     }
 
 
-    public function brandModel(): BelongsTo
+    public function brandModel()
     {
         return $this->belongsTo(BrandModel::class);
     }
 
 
-    public function color(): BelongsTo
+    public function color()
     {
         return $this->belongsTo(Color::class);
     }
 
 
-    public function year(): BelongsTo
+    public function year()
     {
         return $this->belongsTo(Year::class);
     }
