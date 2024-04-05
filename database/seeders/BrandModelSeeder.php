@@ -22,7 +22,7 @@ class BrandModelSeeder extends Seeder
                 'ES 350', 'RX 350',
             ]],
             ['name' => 'BMW', 'models' => [
-                'M5', 'X5', 'X6', 'X7', 'M5', 'X5', 'X6', 'X7',
+                'M5', 'X5', 'X6', 'X7',
             ]],
             ['name' => 'Mercedes-Benz', 'models' => [
                 'S-Class', 'CLS', 'E-Class', 'M-Class',

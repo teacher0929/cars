@@ -21,12 +21,7 @@
                     </div>
                     <div>
                         @foreach($brand->brandModels as $model)
-                            <div>
-                                {{ $model->name }}
-                                <span class="badge bg-success-subtle text-success-emphasis rounded-pill">
-                                    {{ $model->cars_count }}
-                                </span>
-                            </div>
+                            <div>{{ $model->name }}</div>
                         @endforeach
                     </div>
                 </div>
