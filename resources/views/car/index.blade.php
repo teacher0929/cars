@@ -12,9 +12,7 @@
                <div class="row g-3">
                    @foreach($objs as $obj)
                        <div class="col-12">
-                           <div class="border rounded p-3">
-                               {{ $obj->title }}
-                           </div>
+                           @include('app.car')
                        </div>
                    @endforeach
                </div>
