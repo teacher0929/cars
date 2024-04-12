@@ -10,6 +10,7 @@
 </head>
 <body>
 @include('app.nav')
+@include('app.alert')
 @yield('content')
 </body>
 </html>

@@ -5,16 +5,22 @@
 @section('content')
     <div class="container py-4">
        <div class="row g-4">
-           <div class="col-md-3 col-xl-2">
+           <div class="col-md-4 col-xl-3">
                 @include('app.filter')
            </div>
            <div class="col">
                <div class="row g-3">
-                   @foreach($objs as $obj)
+                   @forelse($objs as $obj)
                        <div class="col-12">
                            @include('app.car')
                        </div>
-                   @endforeach
+                   @empty
+                       <div class="col-12">
+                           <div class="fs-1 text-center rounded border p-5">
+                               Car not found :(
+                           </div>
+                       </div>
+                   @endforelse
                </div>
                <div class="pt-4">
                    {{ $objs->links() }}
