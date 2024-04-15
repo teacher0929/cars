@@ -8,7 +8,7 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </head>
-<body>
+<body class="bg-light">
 @include('app.nav')
 @include('app.alert')
 @yield('content')

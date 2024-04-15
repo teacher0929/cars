@@ -47,7 +47,10 @@ class CarController extends Controller
         $f_sortBy = $request->has('sortBy') ? $request->sortBy : null;
 
         $objs = Car::when(isset($f_q), function ($query) use ($f_q) {
-            return $query->where('title', 'like', '%' . $f_q . '%');
+            return $query->where(function ($query) use ($f_q) {
+                $query->where('title', 'like', '%' . $f_q . '%')
+                    ->orWhere('body', 'like', '%' . $f_q . '%');
+            });
         })
             ->when(isset($f_user), function ($query) use ($f_user) {
                 return $query->where('user_id', $f_user);
